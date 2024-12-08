@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1b86ivox4gh"]
+
+[ext_resource type="Script" path="res://body.gd" id="1_np822"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_q8jck"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vy5oc"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrspl"]
+radius = 1.0
+
+[node name="body" type="Node2D"]
+modulate = Color(0.678431, 0.847059, 0.901961, 1)
+script = ExtResource("1_np822")
+velocity = null
+
+[node name="mesh" type="MeshInstance2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+mesh = SubResource("SphereMesh_q8jck")
+
+[node name="detectCollider" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+
+[node name="detectColliderShape" type="CollisionShape2D" parent="detectCollider"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_vy5oc")
+debug_color = Color(0.966904, 0, 0.477621, 0.42)
+
+[node name="planetCollider" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="planetColliderShape" type="CollisionShape2D" parent="planetCollider"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_hrspl")

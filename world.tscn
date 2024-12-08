@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5oro2ul37s6"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_bnqi1"]
+[ext_resource type="PackedScene" uid="uid://cl1b86ivox4gh" path="res://body.tscn" id="1_e5sad"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_bnqi1")
+
+[node name="body" parent="." instance=ExtResource("1_e5sad")]
+modulate = Color(0.616273, 0.870399, 0.859144, 1)
+position = Vector2(68, 61)
+velocity = Vector2(2, 0)
+bodyRadius = 50.0
+mass = 1000.0
+color = Color(0.616273, 0.870399, 0.859144, 1)
+collisionSize = 1100.0
+
+[node name="body2" parent="." instance=ExtResource("1_e5sad")]
+modulate = Color(0.965712, 0.74768, 0.789347, 1)
+position = Vector2(1064, 552)
+velocity = Vector2(-3, 0)
+bodyRadius = 50.0
+mass = 1000.0
+color = Color(0.965712, 0.74768, 0.789347, 1)
+collisionSize = 1100.0
